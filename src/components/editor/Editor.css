@@ -1,0 +1,36 @@
+.editor {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+}
+
+.editor__mainInput {
+  height: inherit;
+  width: 100%;
+  min-width: 100%;
+  background-color: gray;
+  font-size: 1.3rem;
+  resize: horizontal;
+}
+
+.editor__run {
+  position: absolute;
+  border: none;
+  border-radius: 50%;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0rem;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(31, 40, 43);
+  background-image: url(../../assets/runBtn.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.editor__run:hover {
+  cursor: pointer;
+  transform: scale(1.12);
+  transition: all 0.2s ease;
+}

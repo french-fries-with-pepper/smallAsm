@@ -1,0 +1,17 @@
+.output {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+}
+
+.output__window {
+  padding: 1rem;
+  width: 100%;
+  height: inherit;
+  background-color: rgb(12, 16, 22);
+}
+
+.output__text {
+  font-size: 1.5rem;
+  font-family: "Courier New", Courier, monospace;
+}
