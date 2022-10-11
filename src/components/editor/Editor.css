@@ -3,15 +3,20 @@
   width: 100%;
   display: flex;
   align-items: stretch;
+  overflow: hidden;
 }
 
 .editor__mainInput {
   height: inherit;
   width: 100%;
   min-width: 100%;
-  background-color: gray;
-  font-size: 1.3rem;
+  background-color: rgb(67, 70, 75);
+  color: rgba(255, 255, 255, 0.87);
+  font-size: var(--codeFontSize);
+  line-height: var(--codeLineHeight);
   resize: horizontal;
+  border: none;
+  white-space: pre;
 }
 
 .editor__run {

@@ -7,7 +7,6 @@ import assemblerInterpreter from "../../asm/asm";
 function Editor() {
   const dispatch = useDispatch();
   const code = useSelector((state) => state.code);
-  console.log(code);
 
   const changeCode = (code) => {
     dispatch({ type: "changed", payload: code });
@@ -17,21 +16,21 @@ function Editor() {
     dispatch({ type: "running", payload: assemblerInterpreter(code) });
   };
 
-  const [state, setState] = useState(code);
+  const [text, setText] = useState(code);
 
   return (
     <div className="editor">
       <textarea
-        spellcheck="false"
+        spellCheck="false"
         name=""
         id=""
         cols="30"
         rows="10"
         className="editor__mainInput"
-        value={state}
+        value={text}
         onChange={(event) => {
           const newValue = event.target.value;
-          setState(newValue);
+          setText(newValue);
           changeCode(newValue);
         }}
       ></textarea>
