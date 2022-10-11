@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Header.css";
 import logo from "../../assets/logo.svg";
 
@@ -5,7 +6,7 @@ function Header() {
   return (
     <header className="pageHeader">
       <div className="pageHeader__wrap">
-        <a href="#" className="pageHeader__logoLink">
+        <Link to="/" className="pageHeader__logoLink">
           <img
             src={logo}
             width="180"
@@ -13,23 +14,22 @@ function Header() {
             alt="logo"
             className="pageHeade__logo"
           />
-        </a>
+        </Link>
         <nav className="pageHeader__nav">
           <ul className="pageHeader__list">
             <li className="pageHeader__item">
-              <a href="#" className="pageHeader__link">
-                interpreter
-              </a>
+              <Link to="/">Interpreter</Link>
             </li>
             <li className="pageHeader__item">
-              <a href="#" className="pageHeader__link">
-                about
-              </a>
+              <Link to="/Examples">Examples</Link>
+            </li>
+            <li className="pageHeader__item">
+              <Link to="/Docs">Docs</Link>
             </li>
             <li className="pageHeader__item pageHeader__item--bottom">
-              <a href="#" className="pageHeader__link ">
+              <Link to="/Contacts" className="pageHeader__link ">
                 contacts
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

@@ -1,5 +1,5 @@
 .pageHeader {
-  width: 200px;
+  width: var(--headerWidth);
   height: inherit;
   background-color: rgb(67, 70, 75);
   padding-top: 2rem;

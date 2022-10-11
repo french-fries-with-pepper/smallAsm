@@ -15,6 +15,9 @@
 
   --appPadding: 5%;
   --headerHeight: 2rem;
+  --headerWidth: 200px;
+  --codeFontSize: 1.3rem;
+  --codeLineHeight: 2rem;
 }
 *,
 *::after,
