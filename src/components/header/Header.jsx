@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
 import logo from "../../assets/logo.svg";
 
 function Header() {
+  const currentPath = useLocation().pathname;
   return (
     <header className="pageHeader">
       <div className="pageHeader__wrap">
@@ -18,16 +19,31 @@ function Header() {
         <nav className="pageHeader__nav">
           <ul className="pageHeader__list">
             <li className="pageHeader__item">
-              <Link to="/">Interpreter</Link>
+              <Link className={currentPath === "/" ? "active" : ""} to="/">
+                Interpreter
+              </Link>
             </li>
             <li className="pageHeader__item">
-              <Link to="/Examples">Examples</Link>
+              <Link
+                className={currentPath === "/Examples" ? "active" : ""}
+                to="/Examples"
+              >
+                Examples
+              </Link>
             </li>
             <li className="pageHeader__item">
-              <Link to="/Docs">Docs</Link>
+              <Link
+                className={currentPath === "/Docs" ? "active" : ""}
+                to="/Docs"
+              >
+                Docs
+              </Link>
             </li>
             <li className="pageHeader__item pageHeader__item--bottom">
-              <Link to="/Contacts" className="pageHeader__link ">
+              <Link
+                className={currentPath === "/Contacts" ? "active" : ""}
+                to="/Contacts"
+              >
                 contacts
               </Link>
             </li>

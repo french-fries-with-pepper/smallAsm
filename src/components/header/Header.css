@@ -37,6 +37,9 @@
   font-size: 2rem;
   margin-bottom: 1.6rem;
 }
+.pageHeader__item .active{
+  color: rgb(121, 167, 208);
+}
 .pageHeader__item--bottom {
   position: absolute;
   bottom: 0;
