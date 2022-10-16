@@ -1,11 +1,24 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import "./examples.css";
 import { fib, fact, pow, gcd } from "./programs";
 
 function Examples() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [shown, setShown] = useState({
+    fib: false,
+    fact: false,
+    pow: false,
+    gcd: false,
+  });
+
+  const toggleShown = (el) => {
+    const newShown = { ...shown };
+    newShown[el] = !newShown[el];
+    setShown(newShown);
+  };
 
   const changeCode = (code) => {
     dispatch({ type: "changed", payload: code });
@@ -28,6 +41,27 @@ function Examples() {
           >
             try
           </button>
+          <button
+            className={
+              shown.fib
+                ? "examples__expandBtn examples__expandBtn--hide"
+                : "examples__expandBtn"
+            }
+            onClick={() => {
+              toggleShown("fib");
+            }}
+          >
+            expand
+          </button>
+          <pre
+            className={
+              shown.fib
+                ? "examples__code examples__code--shown"
+                : "examples__code"
+            }
+          >
+            {fib}
+          </pre>
         </li>
         <li className="examples__item">
           <h3 className="examples__name">Factorial</h3>
@@ -41,6 +75,27 @@ function Examples() {
           >
             try
           </button>
+          <button
+            className={
+              shown.fact
+                ? "examples__expandBtn examples__expandBtn--hide"
+                : "examples__expandBtn"
+            }
+            onClick={() => {
+              toggleShown("fact");
+            }}
+          >
+            expand
+          </button>
+          <pre
+            className={
+              shown.fact
+                ? "examples__code examples__code--shown"
+                : "examples__code"
+            }
+          >
+            {fact}
+          </pre>
         </li>
         <li className="examples__item">
           <h3 className="examples__name">Power</h3>
@@ -54,6 +109,27 @@ function Examples() {
           >
             try
           </button>
+          <button
+            className={
+              shown.pow
+                ? "examples__expandBtn examples__expandBtn--hide"
+                : "examples__expandBtn"
+            }
+            onClick={() => {
+              toggleShown("pow");
+            }}
+          >
+            expand
+          </button>
+          <pre
+            className={
+              shown.pow
+                ? "examples__code examples__code--shown"
+                : "examples__code"
+            }
+          >
+            {pow}
+          </pre>
         </li>
         <li className="examples__item">
           <h3 className="examples__name">GCD</h3>
@@ -69,6 +145,27 @@ function Examples() {
           >
             try
           </button>
+          <button
+            className={
+              shown.gcd
+                ? "examples__expandBtn examples__expandBtn--hide"
+                : "examples__expandBtn"
+            }
+            onClick={() => {
+              toggleShown("gcd");
+            }}
+          >
+            expand
+          </button>
+          <pre
+            className={
+              shown.gcd
+                ? "examples__code examples__code--shown"
+                : "examples__code"
+            }
+          >
+            {gcd}
+          </pre>
         </li>
       </ul>
     </main>

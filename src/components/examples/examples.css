@@ -1,6 +1,8 @@
 .examples {
   width: calc(100% - var(--headerWidth));
   padding: 2rem;
+  max-height: 100vh;
+  overflow-y: scroll;
 }
 .examples__header {
   width: 100%;
@@ -19,18 +21,21 @@
   position: relative;
   background-color: rgb(67, 70, 75);
   margin-bottom: 2rem;
-  padding: 1rem;
 }
 .examples__name {
+  padding-top: 1rem;
+  padding-left: 1rem;
   padding-bottom: 0.3rem;
+}
+.examples__desc {
+  padding-bottom: 1rem;
+  padding-left: 1rem;
 }
 .examples__runBtn {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 1rem;
   border: none;
   border-radius: 50%;
-  bottom: 1rem;
   right: 1rem;
   font-size: 0;
   width: 45px;
@@ -45,4 +50,41 @@
   cursor: pointer;
   box-shadow: none;
   transition: all 0.2s ease;
+}
+.examples__code {
+  max-height: 0;
+  overflow: hidden;
+  position: relative;
+  background-color: rgb(76, 81, 89);
+  padding-left: 1rem;
+  overflow-x: scroll;
+}
+.examples__expandBtn {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 0;
+  background-image: url("../../assets/expand.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  background-color: inherit;
+  margin: 0 auto;
+  transition: all 0.5s ease;
+}
+.examples__expandBtn:hover {
+  cursor: pointer;
+}
+.examples__expandBtn--hide {
+  transform: rotate(180deg);
+  transition: all 0.25s ease;
+}
+.examples__code--shown {
+  height: fit-content;
+  max-height: 3000px;
+  transition: all 0.5s linear;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
