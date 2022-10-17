@@ -3,14 +3,16 @@
   flex-direction: row;
   align-items: stretch;
 }
-.App__main {
-  padding-left: var(--appPadding);
-  padding-right: var(--appPadding);
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
+.siteHeader {
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-align: center;
+}
+.siteMain {
   width: calc(100% - var(--headerWidth));
-  height: 100vh;
+  padding: 2rem;
+  max-height: 100vh;
+  overflow-y: scroll;
 }

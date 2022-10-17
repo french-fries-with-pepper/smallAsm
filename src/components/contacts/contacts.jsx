@@ -2,8 +2,8 @@ import "./contacts.css";
 
 function Contacts() {
   return (
-    <main>
-      <h2>Contacts will be available soon</h2>
+    <main className="contacts siteMain">
+      <h2 className="contacts__header siteHeader">Contacts</h2>
     </main>
   );
 }

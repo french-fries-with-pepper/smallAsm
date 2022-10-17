@@ -24,8 +24,8 @@ function Examples() {
     dispatch({ type: "changed", payload: code });
   };
   return (
-    <main className="examples">
-      <h2 className="examples__header">Example of programs</h2>
+    <main className="examples siteMain">
+      <h2 className="examples__header siteHeader">Example of programs</h2>
       <ul className="examples__list">
         <li className="examples__item">
           <h3 className="examples__name">Fibonacci</h3>

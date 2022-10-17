@@ -2,8 +2,8 @@ import "./docs.css";
 
 function Docs() {
   return (
-    <main>
-      <h2>Docs will be available soon</h2>
+    <main className="docs siteMain">
+      <h2 className="siteHeader docs__header">Documentation</h2>
     </main>
   );
 }

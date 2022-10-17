@@ -1,0 +1,10 @@
+.home__editorWrap {
+  padding-left: var(--appPadding);
+  padding-right: var(--appPadding);
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+  height: calc(100vh - 6rem);
+}
