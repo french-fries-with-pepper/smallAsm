@@ -4,6 +4,24 @@
   display: flex;
   align-items: stretch;
   overflow: hidden;
+  z-index: 20;
+}
+.editor__placeholder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22rem;
+  z-index: 50;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 0.705);
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+.editor__placeholderLink {
+  color: #44aec7;
+}
+.editor__placeholderLink:visited {
+  color: #44aec7;
 }
 
 .editor__mainInput {

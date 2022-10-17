@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Editor.css";
 
 import assemblerInterpreter from "../../asm/asm";
@@ -20,6 +21,22 @@ function Editor() {
 
   return (
     <div className="editor">
+      <div
+        className="editor__placeholder"
+        style={text ? { display: "none" } : { display: "block" }}
+      >
+        <p className="editor__placeholderText">
+          Type your code here. Reed the{" "}
+          <Link className="editor__placeholderLink" to="/Docs">
+            Docs
+          </Link>{" "}
+          for syntax information, or see{" "}
+          <Link className="editor__placeholderLink" to="/Examples">
+            Examples
+          </Link>{" "}
+          for pre-built program examples
+        </p>
+      </div>
       <textarea
         spellCheck="false"
         name=""
