@@ -65,7 +65,7 @@ function Examples() {
         </li>
         <li className="examples__item">
           <h3 className="examples__name">Factorial</h3>
-          <p className="examples__desc">Retorns factorial of given number.</p>
+          <p className="examples__desc">Returns factorial of given number.</p>
           <button
             className="examples__runBtn"
             onClick={() => {
@@ -99,7 +99,7 @@ function Examples() {
         </li>
         <li className="examples__item">
           <h3 className="examples__name">Power</h3>
-          <p className="examples__desc">Take two numbers and returns a ^ b</p>
+          <p className="examples__desc">Takes two numbers and returns a ^ b</p>
           <button
             className="examples__runBtn"
             onClick={() => {
@@ -134,7 +134,7 @@ function Examples() {
         <li className="examples__item">
           <h3 className="examples__name">GCD</h3>
           <p className="examples__desc">
-            Take two numbers and returns it's Gratest Common Divisor
+            Takes two numbers and returns it's Gratest Common Divisor
           </p>
           <button
             className="examples__runBtn"

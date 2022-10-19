@@ -39,7 +39,7 @@ function Editor() {
         style={placeholder ? { display: "block" } : { display: "none" }}
       >
         <p className="editor__placeholderText">
-          Type your code here. Reed the{" "}
+          Type your code here. Read the{" "}
           <Link className="editor__placeholderLink" to="/Docs">
             Docs
           </Link>{" "}
