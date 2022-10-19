@@ -1,7 +1,10 @@
 .App {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: stretch;
+  justify-content: center;
+  z-index: 20;
 }
 .siteHeader {
   width: 100%;
@@ -11,7 +14,7 @@
   text-align: center;
 }
 .siteMain {
-  width: calc(100% - var(--headerWidth));
+  width: 100%;
   padding: 2rem;
   max-height: 100vh;
   overflow-y: scroll;
@@ -19,11 +22,13 @@
 
 @media only screen and (max-width: 850px) {
   .App {
+    justify-content: start;
     flex-direction: column;
   }
   .siteMain {
     width: 100%;
     padding: 1rem;
+    padding-top: 4.5rem;
     max-height: none;
   }
   .siteHeader {

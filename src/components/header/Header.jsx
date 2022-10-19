@@ -1,11 +1,14 @@
 import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
 import "./Header.css";
 import logo from "../../assets/logo.svg";
 
 function Header() {
+  const [hidden, setHidden] = useState(false);
+  const toggleVisibility = () => setHidden(!hidden);
   const currentPath = useLocation().pathname;
   return (
-    <header className="pageHeader">
+    <header className={hidden ? "pageHeader pageHeader--hidden" : "pageHeader"}>
       <div className="pageHeader__wrap">
         <Link to="/" className="pageHeader__logoLink">
           <img
@@ -50,6 +53,16 @@ function Header() {
           </ul>
         </nav>
       </div>
+      <button
+        onClick={() => {
+          toggleVisibility();
+        }}
+        className={
+          hidden ? "header__toggle" : "header__toggle header__toggle--back"
+        }
+      >
+        toggle
+      </button>
     </header>
   );
 }

@@ -1,10 +1,17 @@
 .pageHeader {
+  position: absolute;
+  left: 0px;
   width: var(--headerWidth);
   height: inherit;
   background-color: rgb(67, 70, 75);
   padding-top: 2rem;
+  z-index: 80;
+  transition: all 0.4s ease-in-out;
 }
-
+.pageHeader--hidden {
+  left: calc(0px - var(--headerWidth));
+  transition: all 0.4s ease-in-out;
+}
 .pageHeader__wrap {
   width: 100%;
   height: calc(100vh - var(--headerHeight));
@@ -43,6 +50,29 @@
 .pageHeader__item--bottom {
   position: absolute;
   bottom: 0;
+}
+.header__toggle {
+  position: fixed;
+  bottom: 120px;
+  left: 20px;
+  font-size: 0;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  background-image: url("../../assets/expand.svg");
+  background-position: center center;
+  transform: rotate(-90deg);
+  z-index: 10;
+  transition: all 0.4s ease-in-out;
+}
+.header__toggle--back {
+  transform: rotate(90deg);
+  transition: all 0.4s ease-in-out;
+}
+.header__toggle:hover {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 850px) {
@@ -88,5 +118,8 @@
   }
   .pageHeader__item--bottom {
     position: static;
+  }
+  .header__toggle {
+    display: none;
   }
 }

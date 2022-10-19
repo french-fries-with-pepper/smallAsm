@@ -8,7 +8,7 @@ function Docs() {
         <h3 className="docs__articleHeader">Summary</h3>
         <p className="docs__articleText">
           Small Asm is a simple assembler interpreter, written in JavaScript. In
-          fact``, this is a frontend for my solution of{" "}
+          fact, this is a frontend for my solution of{" "}
           <a
             className="docs__externalLink"
             target="_blank"

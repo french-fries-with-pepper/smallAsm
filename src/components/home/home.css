@@ -1,12 +1,22 @@
+.home {
+  width: 100%;
+}
 .home__editorWrap {
-  padding-left: var(--appPadding);
-  padding-right: var(--appPadding);
   padding-top: 2rem;
   display: flex;
   flex-direction: row;
   align-items: stretch;
+  justify-content: start;
   width: 100%;
+  max-width: calc(100% - var(--headerWidth));
+  margin: 0 1rem 0 auto;
   height: calc(100vh - 6rem);
+}
+@media only screen and (max-width: 1024px) {
+  .home__editorWrap {
+    max-width: none;
+    margin: 0;
+  }
 }
 
 @media only screen and (max-width: 850px) {
