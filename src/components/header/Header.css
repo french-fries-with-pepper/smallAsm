@@ -37,10 +37,56 @@
   font-size: 2rem;
   margin-bottom: 1.6rem;
 }
-.pageHeader__item .active{
+.pageHeader__item .active {
   color: rgb(121, 167, 208);
 }
 .pageHeader__item--bottom {
   position: absolute;
   bottom: 0;
+}
+
+@media only screen and (max-width: 850px) {
+  .pageHeader {
+    width: 100%;
+    height: 70px;
+    padding-top: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .pageHeader__wrap {
+    width: 100%;
+    height: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .pageHeader__logoLink {
+    width: 120px;
+  }
+  .pageHeader__logoLink img {
+    width: 120px;
+  }
+  .pageHeader__nav {
+    width: 220px;
+    padding: 0;
+  }
+  .pageHeader__list {
+    height: inherit;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .pageHeader__item {
+    font-size: 1.3rem;
+    margin: 0;
+    width: 50%;
+    text-align: right;
+  }
+  .pageHeader__item--bottom {
+    position: static;
+  }
 }

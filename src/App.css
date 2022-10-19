@@ -16,3 +16,18 @@
   max-height: 100vh;
   overflow-y: scroll;
 }
+
+@media only screen and (max-width: 850px) {
+  .App {
+    flex-direction: column;
+  }
+  .siteMain {
+    width: 100%;
+    padding: 1rem;
+    max-height: none;
+  }
+  .siteHeader {
+    font-size: 1.6rem;
+    padding-top: 1rem;
+  }
+}

@@ -5,7 +5,9 @@
 }
 
 .output__window {
+  position: relative;
   padding: 1rem;
+  padding-top: 4rem;
   width: 100%;
   height: inherit;
   background-color: rgb(12, 16, 22);
@@ -15,8 +17,24 @@
   font-size: 1.5rem;
   font-family: "Courier New", Courier, monospace;
 }
-.output__debug{
+.output__debug {
   font-family: "Courier New", Courier, monospace;
   height: 40rem;
   overflow: scroll;
+}
+.output__form {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+@media only screen and (max-width: 850px) {
+  .output__window {
+    padding-top: 4rem;
+  }
+  .output__form {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
 }

@@ -75,3 +75,18 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+
+@media only screen and (max-width: 600px) {
+  .examples__list {
+    width: 100%;
+  }
+  .examples__name {
+    padding-right: 5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+  }
+  .examples__desc {
+    padding-right: 5rem;
+  }
+}

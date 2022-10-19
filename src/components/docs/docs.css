@@ -11,12 +11,12 @@
   line-height: 1.8rem;
 }
 .docs__articleHeader {
-    font-size: 1.5rem;
-    padding-bottom: 0.5rem;
-    margin-top: 2rem;
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
 }
 .docs__articleText {
-    padding-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 .docs__article ul {
   padding-left: 1rem;
@@ -33,4 +33,28 @@
 }
 .docs__externalLink:visited {
   color: #44aec7;
+}
+
+@media only screen and (max-width: 600px) {
+  .docs__article {
+    max-width: none;
+    width: 100%;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .docs__articleHeader {
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-top: 1rem;
+  }
+  .docs__articleText {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+  .docs__article ul {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
 }

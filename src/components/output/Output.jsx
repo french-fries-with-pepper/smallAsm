@@ -21,7 +21,7 @@ function Output() {
       <div className="output__window">
         <p className="output__text">{outputText}</p>
         <div className="output__debug">{isDebug && debugLog}</div>
-        <form>
+        <form className="output__form">
           <input
             type="checkbox"
             name="debug"
