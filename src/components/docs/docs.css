@@ -3,26 +3,26 @@
   background-color: rgb(67, 70, 75);
   min-height: calc(100vh - 10rem);
   max-width: 55rem;
-  overflow-y: scroll;
   padding-top: 2rem;
   padding-left: 4rem;
   padding-right: 4rem;
-}
-.docs__articleHeader {
-  font-size: 1.5rem;
-  padding-bottom: 0.5rem;
-  margin-top: 2rem;
-}
-.docs__articleText {
+
   font-size: 1.2rem;
-  padding-bottom: 0.5rem;
   line-height: 1.8rem;
 }
-.docs__articleText ul {
+.docs__articleHeader {
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+}
+.docs__articleText {
+    padding-bottom: 0.5rem;
+}
+.docs__article ul {
   padding-left: 1rem;
   list-style-type: disc;
 }
-.docs__articleText code {
+.docs__article code {
   background-color: rgb(36, 38, 39);
   margin-right: 0.5rem;
   padding-left: 0.3rem;

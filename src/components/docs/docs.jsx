@@ -40,7 +40,6 @@ function Docs() {
           register can handle one integer number.
         </p>
         <h3 className="docs__articleHeader">Instructions</h3>
-        <p className="docs__articleText">
           <ul>
             <li>
               <code>mov x, y</code>
@@ -111,9 +110,7 @@ function Docs() {
               </span>
             </li>
           </ul>
-        </p>
         <h3 className="docs__articleHeader">Control flow</h3>
-        <p className="docs__articleText">
           <ul>
             <li>
               <code>label:</code>
@@ -190,7 +187,6 @@ function Docs() {
               </span>
             </li>
           </ul>
-        </p>
         <h3 className="docs__articleHeader"></h3>
         <p className="docs__articleText"></p>
         <h3 className="docs__articleHeader"></h3>

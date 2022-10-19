@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Editor.css";
 
@@ -8,22 +8,35 @@ import assemblerInterpreter from "../../asm/asm";
 function Editor() {
   const dispatch = useDispatch();
   const code = useSelector((state) => state.code);
+  const isDebug = useSelector((state) => state.isDebugEnabled);
 
   const changeCode = (code) => {
     dispatch({ type: "changed", payload: code });
   };
 
   const runCode = (code) => {
-    dispatch({ type: "running", payload: assemblerInterpreter(code) });
+    dispatch({
+      type: "running",
+      payload: assemblerInterpreter(code, {}, isDebug),
+    });
   };
 
-  const [text, setText] = useState(code);
+  const showPlaceholder = (e) => {
+    if (placeholder) {
+      if (e.target.value) setPlaceholder(false);
+    }
+    if (e.target.value == "") {
+      setPlaceholder(true);
+    }
+  };
 
+  const [placeholder, setPlaceholder] = useState(code === "");
+  const refCode = useRef(code);
   return (
     <div className="editor">
       <div
         className="editor__placeholder"
-        style={text ? { display: "none" } : { display: "block" }}
+        style={placeholder ? { display: "block" } : { display: "none" }}
       >
         <p className="editor__placeholderText">
           Type your code here. Reed the{" "}
@@ -44,14 +57,17 @@ function Editor() {
         cols="30"
         rows="10"
         className="editor__mainInput"
-        value={text}
-        onChange={(event) => {
-          const newValue = event.target.value;
-          setText(newValue);
-          changeCode(newValue);
-        }}
+        ref={refCode}
+        defaultValue={code}
+        onChange={showPlaceholder}
       ></textarea>
-      <button onClick={() => runCode(code)} className="editor__run">
+      <button
+        onClick={() => {
+          changeCode(refCode.current.value);
+          runCode(refCode.current.value);
+        }}
+        className="editor__run"
+      >
         run!
       </button>
     </div>

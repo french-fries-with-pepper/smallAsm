@@ -1,6 +1,11 @@
 const initialState = {
   code: "",
-  output: "",
+  result: {
+    output: "",
+    exitCode: 0,
+    debug: "",
+  },
+  isDebugEnabled: false,
 };
 
 const codeReducer = (state = initialState, action) => {
@@ -9,7 +14,10 @@ const codeReducer = (state = initialState, action) => {
       return { ...state, code: action.payload };
     }
     case "running": {
-      return { ...state, output: action.payload };
+      return { ...state, result: action.payload };
+    }
+    case "toggleDebug": {
+      return { ...state, isDebugEnabled: action.payload };
     }
     default: {
       return { ...state };

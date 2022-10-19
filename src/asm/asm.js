@@ -1,4 +1,5 @@
-function assemblerInterpreter(program) {
+function assemblerInterpreter(program, registers = {}, isDebug = false) {
+  const debugLog = [];
   /* Object with methods that parse msg command*/
   const msgParser = {
     removeComments: (line) => {
@@ -92,7 +93,7 @@ function assemblerInterpreter(program) {
     output: [],
     currentPointer: [0],
     stack: [],
-    registers: {},
+    registers: registers,
     labels: {},
     cmpFlag: 0b00,
     nextTick() {
@@ -227,7 +228,6 @@ function assemblerInterpreter(program) {
         else return `${this.registers[arg]}`;
       });
       this.nextTick();
-      //console.log(res.join(""));
       this.output.push(res.join(""));
     },
     call(label) {
@@ -273,7 +273,15 @@ function assemblerInterpreter(program) {
       if (c.command && c.command.endsWith(":"))
         cpu.labels[c.command.slice(0, -1).trim()] = idx + 1;
     });
-    //console.log(cpu.labels);
+
+    isDebug &&
+      debugLog.push(
+        "labels are: " +
+          Object.keys(cpu.labels)
+            .map((key) => `${key} on line ${cpu.labels[key]}`)
+            .join(" ") +
+          "\n"
+      );
     //console.log(commandsArr);
     return commandsArr;
   };
@@ -302,6 +310,10 @@ function assemblerInterpreter(program) {
       /* console.log(
           `run command ${instruction} with args ${args} line ${cpu.currentPointer}`
         ); */
+      isDebug &&
+        debugLog.push(
+          `Call stack: ${cpu.currentPointer} run ${instruction} with args ${args}`
+        );
       //console.log(instruction);
       if (instruction.endsWith(":")) {
         cpu.nextTick();
@@ -309,8 +321,13 @@ function assemblerInterpreter(program) {
     }
   };
   const isCorrectFinish = interpreter();
-  if (isCorrectFinish === 0) return cpu.output.join("\n");
-  else return -1;
+  const result = {
+    output: cpu.output.join("\n"),
+    exitCode: 0,
+    debug: debugLog.join("\n"),
+  };
+  if (isCorrectFinish === 0) return result;
+  else return { ...result, exitCode: 1 };
 }
 
 export default assemblerInterpreter;
