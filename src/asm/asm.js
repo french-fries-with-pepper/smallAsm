@@ -292,11 +292,15 @@ function assemblerInterpreter(program, registers = {}, isDebug = false) {
     while (true) {
       const instrucionIdx = cpu.currentPointer[cpu.currentPointer.length - 1];
       //console.log(instrucionIdx);
-      if (instrucionIdx >= cpu.stack.length) return -1;
+      if (instrucionIdx >= cpu.stack.length) {
+        isDebug && debugLog.push("unexpected end of program");
+        return { exitCode: 1, debugLog, output: cpu.output };
+      }
       const instruction = cpu.stack[instrucionIdx].command;
       const args = cpu.stack[instrucionIdx].args;
 
-      if (instruction === "end") return 0;
+      if (instruction === "end")
+        return { exitCode: 0, debugLog, output: cpu.output };
       if (instruction === "ret") {
         cpu.currentPointer.pop();
         continue;
@@ -307,17 +311,23 @@ function assemblerInterpreter(program, registers = {}, isDebug = false) {
         continue;
       }
 
-      /* console.log(
-          `run command ${instruction} with args ${args} line ${cpu.currentPointer}`
-        ); */
       isDebug &&
         debugLog.push(
           `Call stack: ${cpu.currentPointer} run ${instruction} with args ${args}`
         );
-      //console.log(instruction);
       if (instruction.endsWith(":")) {
         cpu.nextTick();
-      } else cpu[instruction](...args);
+      } else {
+        if (!cpu[instruction]) {
+          isDebug &&
+            debugLog.push(
+              `Line ${instrucionIdx + 1} unknown instruction ${instruction}`
+            );
+          return { exitCode: 1, debugLog, output: cpu.output };
+        }
+
+        cpu[instruction](...args);
+      }
     }
   };
   const isCorrectFinish = interpreter();
@@ -326,7 +336,7 @@ function assemblerInterpreter(program, registers = {}, isDebug = false) {
     exitCode: 0,
     debug: debugLog.join("\n"),
   };
-  if (isCorrectFinish === 0) return result;
+  if (isCorrectFinish.exitCode === 0) return result;
   else return { ...result, exitCode: 1 };
 }
 

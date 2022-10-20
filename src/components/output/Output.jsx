@@ -16,10 +16,14 @@ function Output() {
   const debugLog = store.result.debug
     .split("\n")
     .map((line, i) => <p key={i}>{line}</p>);
+  const exitCode = store.result.exitCode;
   return (
     <div className="output">
       <div className="output__window">
         <p className="output__text">{outputText}</p>
+        {exitCode !== 0 && (
+          <p className="output__exitCode">terminated, exit code {exitCode}</p>
+        )}
         <div className="output__debug">{isDebug && debugLog}</div>
         <form className="output__form">
           <input
