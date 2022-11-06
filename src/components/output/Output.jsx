@@ -24,7 +24,7 @@ function Output() {
         {exitCode !== 0 && (
           <p className="output__exitCode">terminated, exit code {exitCode}</p>
         )}
-        <div className="output__debug">{isDebug && debugLog}</div>
+        {isDebug && <div className="output__debug">{debugLog}</div>}
         <form className="output__form">
           <input
             type="checkbox"

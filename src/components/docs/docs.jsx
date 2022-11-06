@@ -44,31 +44,31 @@ function Docs() {
           <li>
             <code>mov x, y</code>
             <span>
-              - copyes y (either an integer or the value of a register) into
+              - copy y (either an integer or the value of a register) into
               register x.
             </span>
           </li>
           <li>
             <code>inc x</code>
-            <span>- increases the content of register x by one.</span>
+            <span>- increase the content of register x by one.</span>
           </li>
           <li>
             <code>dec x</code>
-            <span>- decreases the content of register x by one.</span>
+            <span>- decrease the content of register x by one.</span>
           </li>
           <li>
             <code>add x, y</code>
             <span>
-              - adds the content of the register x with y (either an integer or
-              the value of a register) and stores the result in x (i.e.
+              - add the content of the register x with y (either an integer or
+              the value of a register) and store the result in x (i.e.
               register[x] += y).
             </span>
           </li>
           <li>
             <code>sub x, y</code>
             <span>
-              - subtracts y (either an integer or the value of a register) from
-              the register x and stores the result in x (i.e. register[x] -= y).
+              - subtract y (either an integer or the value of a register) from
+              the register x and store the result in x (i.e. register[x] -= y).
             </span>
           </li>
           <li>
@@ -79,7 +79,7 @@ function Docs() {
           <li>
             <code>cmp x, y</code>
             <span>
-              - compares x (either an integer or the value of a register) and y
+              - compare x (either an integer or the value of a register) and y
               (either an integer or the value of a register). The result is used
               in the conditional jumps (jne, je, jge, jg, jle and jl)
             </span>
@@ -114,7 +114,7 @@ function Docs() {
           <li>
             <code>label:</code>
             <span>
-              - defines a label position (<code>label = identifier + ":"</code>,
+              - define a label position (<code>label = identifier + ":"</code>,
               an identifier being a string that does not match any other
               command). Jump commands and <code>call</code>are aimed to these
               labels positions in the program.
@@ -123,48 +123,48 @@ function Docs() {
           <li>
             <code>jmp lbl</code>
             <span>
-              - jumps to the label <code>lbl</code>.
+              - jump to the label <code>lbl</code>.
             </span>
           </li>
           <li>
             <code>jne lbl</code>
             <span>
-              - jumps to the label <code>lbl</code>if the values of the previous{" "}
+              - jump to the label <code>lbl</code>if the values of the previous{" "}
               <code>cmp</code>command were not equal.
             </span>
           </li>
           <li>
             <code>je lbl</code>
             <span>
-              - jumps to the label <code>lbl</code>if the values of the previous{" "}
+              - jump to the label <code>lbl</code>if the values of the previous{" "}
               <code>cmp</code>command were equal.
             </span>
           </li>
           <li>
             <code>jge lbl</code>
             <span>
-              - jumps to the label <code>lbl</code>if x was greater or equal
+              - jump to the label <code>lbl</code>if x was greater or equal
               than y in the previous <code>cmp</code>command.
             </span>
           </li>
           <li>
             <code>jg lbl</code>
             <span>
-              - jumps to the label <code>lbl</code>if x was greater than y in
+              - jump to the label <code>lbl</code>if x was greater than y in
               the previous <code>cmp</code>command.
             </span>
           </li>
           <li>
             <code>jle lbl</code>
             <span>
-              - jumps to the label <code>lbl</code>if x was less or equal than y
+              - jump to the label <code>lbl</code>if x was less or equal than y
               in the previous <code>cmp</code>command.
             </span>
           </li>
           <li>
             <code>jl lbl</code>
             <span>
-              - jumps to the label <code>lbl</code>if x was less than y in the
+              - jump to the label <code>lbl</code>if x was less than y in the
               previous <code>cmp</code>command.
             </span>
           </li>
