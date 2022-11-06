@@ -25,7 +25,7 @@ function Editor() {
     if (placeholder) {
       if (e.target.value) setPlaceholder(false);
     }
-    if (e.target.value == "") {
+    if (e.target.value === "") {
       setPlaceholder(true);
     }
   };

@@ -1,0 +1,21 @@
+.contacts {
+  max-width: 35rem;
+  margin: 0 auto;
+}
+.contacts__wrapper {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: rgb(67, 70, 75);
+}
+.contacts__name {
+  font-size: 1.2rem;
+}
+.contacts__mail {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.contacts__wrapper a,
+.contacts__wrapper a:visited {
+  color: #44aec7;
+}
